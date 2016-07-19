@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="cppunitlite" displayName="cppunitlite" projectFiles="true">
+        <itemPath>cppunitlite/Failure.cpp</itemPath>
+        <itemPath>cppunitlite/Failure.h</itemPath>
+        <itemPath>cppunitlite/Main.cpp</itemPath>
+        <itemPath>cppunitlite/Test.cpp</itemPath>
+        <itemPath>cppunitlite/Test.h</itemPath>
+        <itemPath>cppunitlite/TestHarness.h</itemPath>
+        <itemPath>cppunitlite/TestRegistry.cpp</itemPath>
+        <itemPath>cppunitlite/TestRegistry.h</itemPath>
+        <itemPath>cppunitlite/TestResult.cpp</itemPath>
+        <itemPath>cppunitlite/TestResult.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <logicalFolder name="f3" displayName="Framework" projectFiles="true">
+          <itemPath>src/Layer.cpp</itemPath>
+          <itemPath>src/Layer.h</itemPath>
+          <itemPath>src/PlacedGraphic.cpp</itemPath>
+          <itemPath>src/PlacedGraphic.h</itemPath>
+          <itemPath>src/PlacedGraphicIterator.cpp</itemPath>
+          <itemPath>src/PlacedGraphicIterator.h</itemPath>
+          <itemPath>src/SceneReader.cpp</itemPath>
+          <itemPath>src/SceneReader.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="vg" projectFiles="true">
+          <itemPath>src/HVectorGraphic.cpp</itemPath>
+          <itemPath>src/HVectorGraphic.h</itemPath>
+          <itemPath>src/Point.cpp</itemPath>
+          <itemPath>src/Point.h</itemPath>
+          <itemPath>src/Scene.cpp</itemPath>
+          <itemPath>src/Scene.h</itemPath>
+          <itemPath>src/VectorGraphic.cpp</itemPath>
+          <itemPath>src/VectorGraphic.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="xml" projectFiles="true">
+          <itemPath>src/Element.cpp</itemPath>
+          <itemPath>src/Element.h</itemPath>
+          <itemPath>src/Parse.cpp</itemPath>
+          <itemPath>src/Parse.h</itemPath>
+          <itemPath>src/VectorGraphicStreamer.cpp</itemPath>
+          <itemPath>src/VectorGraphicStreamer.h</itemPath>
+          <itemPath>src/VectorReader.cpp</itemPath>
+          <itemPath>src/VectorReader.h</itemPath>
+          <itemPath>src/XmlReader.cpp</itemPath>
+          <itemPath>src/XmlReader.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>DriverTests.cpp</itemPath>
+      <itemPath>ParseTest.cpp</itemPath>
+      <itemPath>PlacedGraphicTest.cpp</itemPath>
+      <itemPath>PointTest.cpp</itemPath>
+      <itemPath>SceneReaderTest.cpp</itemPath>
+      <itemPath>SceneTest.cpp</itemPath>
+      <itemPath>SceneWriterTest.cpp</itemPath>
+      <itemPath>VectorGraphic.xml</itemPath>
+      <itemPath>VectorGraphicTest.cpp</itemPath>
+      <itemPath>XmlReaderTest.cpp</itemPath>
+      <itemPath>XmlWriterTest.cpp</itemPath>
+      <itemPath>output.xml</itemPath>
+      <itemPath>scene.xml</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>cppunitlite</Elem>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
+      </compileType>
+      <item path="DriverTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ParseTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlacedGraphicTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PointTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneReaderTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneWriterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VectorGraphic.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VectorGraphicTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlReaderTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlWriterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Failure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Failure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestHarness.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestResult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="output.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="scene.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Element.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HVectorGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HVectorGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Layer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Layer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Parse.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Parse.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphicIterator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphicIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Scene.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Scene.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SceneReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorGraphicStreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorGraphicStreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XmlReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XmlReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="DriverTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ParseTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlacedGraphicTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PointTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneReaderTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SceneWriterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VectorGraphic.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VectorGraphicTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlReaderTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlWriterTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Failure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Failure.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/Main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/Test.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestHarness.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestRegistry.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunitlite/TestResult.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="output.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="scene.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Element.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HVectorGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HVectorGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Layer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Layer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Parse.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Parse.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphicIterator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PlacedGraphicIterator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Scene.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Scene.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/SceneReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorGraphic.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorGraphic.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorGraphicStreamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorGraphicStreamer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/VectorReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/VectorReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XmlReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XmlReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
