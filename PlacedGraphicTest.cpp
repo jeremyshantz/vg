@@ -11,6 +11,7 @@ TEST(ctor, PlacedGraphic)
     constexpr VG::Point expected(44, 55);
     CHECK_EQUAL(expected, pg.getPlacementPoint());
     CHECK_EQUAL(vg.get(), &pg.getGraphic());
+    
 }
 
 TEST(setPlacementPoint, PlacedGraphic)

@@ -1,4 +1,5 @@
 
+#include "ElementList.h"
 #include "Element.h"
 
 namespace Xml {
@@ -11,4 +12,14 @@ namespace Xml {
 
     Element::~Element() {
     }
+    
+    const std::string Element::getAttribute(const std::string name) const
+    {
+        
+    }
+    
+     ElementList Element::getChildElements()
+     {
+         
+     }
 }

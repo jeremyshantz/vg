@@ -16,7 +16,7 @@ namespace Framework {
         PlacedGraphic(VG::Point, VG::HVectorGraphic&);
         PlacedGraphic(const PlacedGraphic&);
         void setGraphic(const HVectorGraphic &);
-        const VectorGraphic &  getGraphic() const;
+        const VectorGraphic  getGraphic();
         void setPlacementPoint(const Point &);
         const Point & getPlacementPoint() const;
         virtual ~PlacedGraphic();

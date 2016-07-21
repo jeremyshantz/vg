@@ -12,7 +12,7 @@ namespace Xml {
     Reader::~Reader() {
     }
     
-    static Xml::Element * Reader::loadXml(std::stringstream & stream)
+    Xml::Element Reader::loadXml(std::stringstream & stream)
     {
         
     }

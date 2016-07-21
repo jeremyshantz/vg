@@ -1,7 +1,7 @@
 
 #include "Scene.h"
 
-namespace VG {
+namespace Framework {
 
     Scene::Scene(int width, int height): width(width), height(height) {
     }

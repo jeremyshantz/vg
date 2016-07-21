@@ -10,7 +10,7 @@ namespace Xml {
         Reader();
         Reader(const Reader& orig);
         virtual ~Reader();
-         static  Xml::Element * loadXml(std::stringstream & x);
+         static  Xml::Element  loadXml(std::stringstream & x);
     private:
 
     };

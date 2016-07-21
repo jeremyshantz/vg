@@ -32,22 +32,30 @@
           <itemPath>src/PlacedGraphic.h</itemPath>
           <itemPath>src/PlacedGraphicIterator.cpp</itemPath>
           <itemPath>src/PlacedGraphicIterator.h</itemPath>
+          <itemPath>src/Scene.cpp</itemPath>
+          <itemPath>src/Scene.h</itemPath>
           <itemPath>src/SceneReader.cpp</itemPath>
           <itemPath>src/SceneReader.h</itemPath>
+          <itemPath>src/SceneWriter.cpp</itemPath>
+          <itemPath>src/SceneWriter.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="vg" projectFiles="true">
           <itemPath>src/HVectorGraphic.cpp</itemPath>
           <itemPath>src/HVectorGraphic.h</itemPath>
           <itemPath>src/Point.cpp</itemPath>
           <itemPath>src/Point.h</itemPath>
-          <itemPath>src/Scene.cpp</itemPath>
-          <itemPath>src/Scene.h</itemPath>
           <itemPath>src/VectorGraphic.cpp</itemPath>
           <itemPath>src/VectorGraphic.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="xml" projectFiles="true">
+          <itemPath>src/AttributeMap.cpp</itemPath>
+          <itemPath>src/AttributeMap.h</itemPath>
           <itemPath>src/Element.cpp</itemPath>
           <itemPath>src/Element.h</itemPath>
+          <itemPath>src/ElementList.cpp</itemPath>
+          <itemPath>src/ElementList.h</itemPath>
+          <itemPath>src/HElement.cpp</itemPath>
+          <itemPath>src/HElement.h</itemPath>
           <itemPath>src/Parse.cpp</itemPath>
           <itemPath>src/Parse.h</itemPath>
           <itemPath>src/VectorGraphicStreamer.cpp</itemPath>
@@ -56,6 +64,8 @@
           <itemPath>src/VectorReader.h</itemPath>
           <itemPath>src/XmlReader.cpp</itemPath>
           <itemPath>src/XmlReader.h</itemPath>
+          <itemPath>src/XmlWriter.cpp</itemPath>
+          <itemPath>src/XmlWriter.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>DriverTests.cpp</itemPath>
@@ -147,9 +157,21 @@
       </item>
       <item path="scene.xml" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/AttributeMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AttributeMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Element.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ElementList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ElementList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HElement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HElement.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/HVectorGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -183,6 +205,10 @@
       </item>
       <item path="src/SceneReader.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SceneWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/VectorGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/VectorGraphic.h" ex="false" tool="3" flavor2="0">
@@ -198,6 +224,10 @@
       <item path="src/XmlReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XmlReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XmlWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XmlWriter.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -266,9 +296,21 @@
       </item>
       <item path="scene.xml" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/AttributeMap.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/AttributeMap.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/Element.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Element.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ElementList.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ElementList.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/HElement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/HElement.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/HVectorGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -302,6 +344,10 @@
       </item>
       <item path="src/SceneReader.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/SceneWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/SceneWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/VectorGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/VectorGraphic.h" ex="false" tool="3" flavor2="0">
@@ -317,6 +363,10 @@
       <item path="src/XmlReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/XmlReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/XmlWriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/XmlWriter.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

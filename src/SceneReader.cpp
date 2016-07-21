@@ -12,7 +12,7 @@ namespace Framework {
     SceneReader::~SceneReader() {
     }
     
-    static VG::Scene & SceneReader::readScene(Xml::Element &)
+    Framework::Scene & SceneReader::readScene(Xml::Element &)
     {
         
     }

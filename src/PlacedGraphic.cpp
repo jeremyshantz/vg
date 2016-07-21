@@ -3,9 +3,6 @@
 
 namespace Framework {
 
-    PlacedGraphic::PlacedGraphic(int x, int y) : x(x), y(y) {
-    }
-
     PlacedGraphic::PlacedGraphic(const PlacedGraphic& orig) {
     }
 
@@ -17,7 +14,7 @@ namespace Framework {
         graphic = hgraphic;
     }
     
-    const VectorGraphic &PlacedGraphic::getGraphic() const
+    const VectorGraphic PlacedGraphic::getGraphic()
     {
         return graphic.get();
     }

@@ -50,7 +50,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/cppunitlite/Test.o \
 	${OBJECTDIR}/cppunitlite/TestRegistry.o \
 	${OBJECTDIR}/cppunitlite/TestResult.o \
+	${OBJECTDIR}/src/AttributeMap.o \
 	${OBJECTDIR}/src/Element.o \
+	${OBJECTDIR}/src/ElementList.o \
+	${OBJECTDIR}/src/HElement.o \
 	${OBJECTDIR}/src/HVectorGraphic.o \
 	${OBJECTDIR}/src/Layer.o \
 	${OBJECTDIR}/src/Parse.o \
@@ -59,10 +62,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Point.o \
 	${OBJECTDIR}/src/Scene.o \
 	${OBJECTDIR}/src/SceneReader.o \
+	${OBJECTDIR}/src/SceneWriter.o \
 	${OBJECTDIR}/src/VectorGraphic.o \
 	${OBJECTDIR}/src/VectorGraphicStreamer.o \
 	${OBJECTDIR}/src/VectorReader.o \
-	${OBJECTDIR}/src/XmlReader.o
+	${OBJECTDIR}/src/XmlReader.o \
+	${OBJECTDIR}/src/XmlWriter.o
 
 
 # C Compiler Flags
@@ -164,10 +169,25 @@ ${OBJECTDIR}/cppunitlite/TestResult.o: cppunitlite/TestResult.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/cppunitlite/TestResult.o cppunitlite/TestResult.cpp
 
+${OBJECTDIR}/src/AttributeMap.o: src/AttributeMap.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/AttributeMap.o src/AttributeMap.cpp
+
 ${OBJECTDIR}/src/Element.o: src/Element.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Element.o src/Element.cpp
+
+${OBJECTDIR}/src/ElementList.o: src/ElementList.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ElementList.o src/ElementList.cpp
+
+${OBJECTDIR}/src/HElement.o: src/HElement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HElement.o src/HElement.cpp
 
 ${OBJECTDIR}/src/HVectorGraphic.o: src/HVectorGraphic.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -209,6 +229,11 @@ ${OBJECTDIR}/src/SceneReader.o: src/SceneReader.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SceneReader.o src/SceneReader.cpp
 
+${OBJECTDIR}/src/SceneWriter.o: src/SceneWriter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/SceneWriter.o src/SceneWriter.cpp
+
 ${OBJECTDIR}/src/VectorGraphic.o: src/VectorGraphic.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -228,6 +253,11 @@ ${OBJECTDIR}/src/XmlReader.o: src/XmlReader.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/XmlReader.o src/XmlReader.cpp
+
+${OBJECTDIR}/src/XmlWriter.o: src/XmlWriter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/XmlWriter.o src/XmlWriter.cpp
 
 # Subprojects
 .build-subprojects:

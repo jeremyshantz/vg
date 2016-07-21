@@ -5,7 +5,7 @@
 #include <fstream>
 #include <istream>
 
-using Xml::xml::VectorGraphicStreamer;
+using Xml::VectorGraphicStreamer;
 
 namespace Xml {
 
