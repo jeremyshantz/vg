@@ -12,7 +12,7 @@ namespace VG {
         HVectorGraphic(VectorGraphic * vg);
         HVectorGraphic(const HVectorGraphic& orig);
         virtual ~HVectorGraphic();
-        const VectorGraphic  get();
+        const VectorGraphic  * get();
     private:
         VectorGraphic * graphic;
     };

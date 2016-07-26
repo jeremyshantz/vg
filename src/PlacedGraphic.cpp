@@ -3,7 +3,15 @@
 
 namespace Framework {
 
-    PlacedGraphic::PlacedGraphic(const PlacedGraphic& orig) {
+    PlacedGraphic::PlacedGraphic() {
+    }
+    
+    PlacedGraphic::PlacedGraphic(VG::Point, VG::HVectorGraphic&)
+    {
+
+    }
+    
+    PlacedGraphic::PlacedGraphic(const PlacedGraphic & orig) {
     }
 
     PlacedGraphic::~PlacedGraphic() {
@@ -13,10 +21,10 @@ namespace Framework {
     {
         graphic = hgraphic;
     }
-    
-    const VectorGraphic PlacedGraphic::getGraphic()
+
+    const VectorGraphic * PlacedGraphic::getGraphic()
     {
-        return graphic.get();
+        
     }
 
     void PlacedGraphic::setPlacementPoint(const Point & point)

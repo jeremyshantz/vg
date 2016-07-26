@@ -12,7 +12,7 @@ namespace Xml {
     Writer::~Writer() {
     }
     
-    void Writer::writeXml( Xml::HElement, std::ostream)
+    void Writer::writeXml(Xml::HElement, std::ostream & out)
     {
 
     }

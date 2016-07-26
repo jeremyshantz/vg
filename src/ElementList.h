@@ -1,9 +1,12 @@
 #pragma once
 #include "Element.h"
+#include "HElement.h"
+#include <memory>
 
 namespace Xml {
 
     class Element;
+    class HElement;
     
     class ElementList {
     public:
@@ -11,7 +14,8 @@ namespace Xml {
         ElementList(const ElementList& orig);
         virtual ~ElementList();
         int size();
-        Element & operator[](int);
+        bool empty();
+        std::unique_ptr<HElement> operator[](int);
     private:
 
     };

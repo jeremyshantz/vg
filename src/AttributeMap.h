@@ -1,4 +1,5 @@
 #pragma once
+#include<string>
 
 namespace Xml {
 
@@ -9,6 +10,7 @@ namespace Xml {
         virtual ~AttributeMap();
         int size();
         bool empty();
+        std::string operator[](std::string);
     private:
 
     };

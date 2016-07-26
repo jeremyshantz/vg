@@ -1,5 +1,5 @@
 
-#include "HElement.h"
+#include "Element.h"
 
 namespace Xml {
 
@@ -10,5 +10,10 @@ namespace Xml {
     }
 
     HElement::~HElement() {
+    }
+    
+    std::string HElement::getName()
+    {
+        
     }
 }

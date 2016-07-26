@@ -14,10 +14,21 @@ namespace Xml {
         Element();
         Element(const Element& orig);
         virtual ~Element();
-        ElementList getChildElements();
-        const std::string getAttribute(const std::string) const;
-        AttributeMap getAttributes() const;
+        virtual ElementList getChildElements();
+        virtual const std::string getAttribute(const std::string) const;
+        virtual AttributeMap getAttributes() const;
         Element operator*();
+    private:
+
+    };
+    
+     class HElement : public  Element{
+    public:
+        HElement();
+        HElement(const HElement& orig);
+        virtual ~HElement();
+        std::string getName();
+        
     private:
 
     };

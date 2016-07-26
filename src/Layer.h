@@ -1,6 +1,6 @@
 #pragma once
 
-#include "VectorGraphic.h"
+#include "PlacedGraphic.h"
 #include <vector>
 #include <string>
 
@@ -17,5 +17,6 @@ namespace Framework {
         string getAlias() const;
     private:
         string alias;
+        vector<PlacedGraphic> graphics;
     };
 }

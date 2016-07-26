@@ -13,6 +13,10 @@ namespace Xml {
     Element::~Element() {
     }
     
+    AttributeMap Element::getAttributes() const
+    {
+
+    }
     const std::string Element::getAttribute(const std::string name) const
     {
         

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Framework { namespace Layer {
+namespace Framework {
     
 class PlacedGraphicIterator {
     public:
@@ -10,4 +10,4 @@ class PlacedGraphicIterator {
     private:
 
     };
-}}
+}

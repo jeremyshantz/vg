@@ -32,7 +32,5 @@ TEST(a, b)
     vg.addPoint(Point(15,16));
    
     VectorReader r;
-    r.save(vg, destination);
-    
-    
+    r.save(vg, destination);  
 }

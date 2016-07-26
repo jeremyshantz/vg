@@ -3,6 +3,8 @@
 
 namespace VG {
 
+    HVectorGraphic::HVectorGraphic() {
+    }
     HVectorGraphic::HVectorGraphic(VectorGraphic * vg): graphic(vg) {
     }
 
@@ -10,5 +12,10 @@ namespace VG {
     }
 
     HVectorGraphic::~HVectorGraphic() {
+    }
+    
+    const VectorGraphic  * HVectorGraphic::get()
+    {
+
     }
 }

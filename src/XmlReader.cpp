@@ -1,5 +1,6 @@
 
 #include "XmlReader.h"
+#include <memory>
 
 namespace Xml {
 
@@ -12,8 +13,9 @@ namespace Xml {
     Reader::~Reader() {
     }
     
-    Xml::Element Reader::loadXml(std::stringstream & stream)
+    std::unique_ptr<HElement> Reader::loadXml(std::stringstream & x)
     {
-        
+
     }
+    
 }

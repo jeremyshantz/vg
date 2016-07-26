@@ -20,4 +20,9 @@ namespace Xml {
     {
         
     }
+    
+    std::string AttributeMap::operator [](std::string)
+    {
+        
+    }
 }

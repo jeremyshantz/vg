@@ -16,4 +16,13 @@ namespace Xml {
     {
         
     }
+
+    bool ElementList::empty()
+    {
+
+    }
+    std::unique_ptr<HElement> ElementList::operator[](int)
+    {
+
+    }
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "HElement.h"
+#include "Element.h"
 #include <ostream>
 namespace Xml {
 
@@ -8,7 +8,7 @@ namespace Xml {
         Writer();
         Writer(const Writer& orig);
         virtual ~Writer();
-        static void writeXml( Xml::HElement, std::ostream);
+        static void writeXml( Xml::HElement, std::ostream&);
     private:
 
     };
