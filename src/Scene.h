@@ -23,8 +23,8 @@ namespace Framework {
         void pushBack(Layer layer);
         void remove(Layer layer);
         virtual ~Scene();
-        void* begin();
-        void* end();
+        std::vector<Layer>::iterator  begin();
+        std::vector<Layer>::iterator end();
     private:
         int width;
         int height;

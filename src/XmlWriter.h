@@ -1,5 +1,5 @@
 #pragma once
-#include "Element.h"
+#include "HElement.h"
 #include <ostream>
 namespace Xml {
 

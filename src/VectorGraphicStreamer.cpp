@@ -1,106 +1,122 @@
+/*
+Copyright (C) 2016. Sundeep Bhatia. All Rights Reserved.
 
-#include "VectorGraphicStreamer.h"
-#include <iostream>
-#include <cctype>
+Project - Assignment1
+File - VectorGraphicStreamer.cpp
+Created - 7/17/2016 - Sundeep Bhatia
+*/
+// Project
+#include "Parse.h"                      // Parse::eat, Parse::trim
+#include "VectorGraphicStreamer.h"      // VG::VectorGraphic
+// C++ Std Library
+#include <iostream>                     // std::istream, std::ostream, std::ios::exceptions, ios::ios_base:*bit
+#include <string>
 
-const std::string VectorGraphicXml = R"(
-<VectorGraphic closed="true">
-<Point x="0" y="0"/>
-<Point x="10" y="0">
-</Point>
-<Point x="10" y="10"/>
-<Point x="0" y="10"/>
-</VectorGraphic>
-)";
-    
-namespace Xml {
+#include<sstream>
 
-    VectorGraphicStreamer::VectorGraphicStreamer() { }
-    VectorGraphicStreamer::~VectorGraphicStreamer() { }
-    
-    VectorGraphic VectorGraphicStreamer::fromXml(std::stringstream & xml)
-    {
-         return makeVectorGraphic(xml);
-    }
-    
-    void VectorGraphicStreamer::toXml(const VectorGraphic & vg, std::stringstream& stream)
-    {
-        stream << "<VectorGraphic closed=\""<< (vg.isClosed() ? "true" : "false")  << "\">" << std::endl;
-        
-        for (int i = 0; i < vg.getPointCount(); i++)
+using std::runtime_error;
+using std::string;
+
+namespace {
+    class ReadXml {
+    public:
+        ReadXml(std::istream& xml) : in(xml) {}
+        void getName(string& name, char delim)
         {
-            stream << getXml(vg.getPoint(i));
+            Parse::eat(in);
+            name.clear();
+            while (in.get(ch) && !isspace(ch)) {
+                if (ch == delim) { in.unget(); break; }
+                name.push_back(ch);
+            }
+            Parse::trim(name);
         }
-        
-        stream << "</VectorGraphic>" << std::endl;
-    }
-    
-    VectorGraphic VectorGraphicStreamer::makeVectorGraphic(std::stringstream & xml)
-    {
-        VectorGraphic vg =  VectorGraphic();
-        
-        for (std::string line; std::getline(xml, line);)
+        bool getValue(string& value)
         {
-            if (line.find("<VectorGraphic") != std::string::npos)
-            {
-                if (vectorIsOpen(line))
-                {
-                    vg.openShape();
-                } else {
-                    vg.closeShape();
+            Parse::eat(in);
+            value.clear();
+            if (in.get(ch) && ch != '"') return false;
+            while (in.get(ch) && ch != '"') {
+                value.push_back(ch);
+            }
+            return true;
+        }
+        bool getElement(string& name) {
+            
+            Parse::eat(in);
+            name.clear();
+            in.get(ch);
+            if (ch != '<') return false;
+            getName(name, '>');
+//            Parse::trim(name, std::string("<"));
+//            std::cout << name << std::endl;
+//            
+            return true;
+        }
+        void skipEndElement() {
+            Parse::eat(in);
+            Parse::eat(in, "/>");
+        }
+        bool getAttribute(string& name, string& value) {
+            Parse::eat(in);
+            ch = in.peek();
+            if (ch == '/' || ch == '>') return false;
+            getName(name, '=');
+            Parse::eat(in, "=");
+            return getValue(value);
+        }
+    private:
+        char ch;
+        std::istream& in;
+    };
+}
+
+namespace VG {
+    void VectorGraphicStreamer::toXml(const VectorGraphic& vg, std::ostream& out)
+    {
+        out << R"(<VectorGraphic closed=")" << std::boolalpha << vg.isClosed() << R"(">)" << std::endl;
+        for (auto i = 0; i < vg.getPointCount(); ++i) {
+            auto point = vg.getPoint(i);
+            out << R"(<Point x=")" << point.getX() << R"(" y=")" << point.getY() << R"("/>)" << std::endl;
+        }
+        out << R"(</VectorGraphic>)";
+    }
+
+    VectorGraphic VG::VectorGraphicStreamer::fromXml(std::istream& in)
+    {
+        in.exceptions(std::ios_base::eofbit | std::ios_base::failbit | std::ios_base::badbit);
+        string name;
+        ReadXml rx(in);
+        if (!rx.getElement(name)) {
+            throw std::runtime_error{"Invalid XML: bad char"};
+        }
+        if (name != "VectorGraphic") {
+            throw std::runtime_error{"Invalid XML: expected tag VectorGraphic got " + name};
+        }
+        string value;
+        VectorGraphic vg;
+        while (rx.getAttribute(name, value)) {
+            if (name == "closed") {
+                if (value == "true") { vg.closeShape(); }
+                else if (value == "false") { vg.openShape(); }
+                else throw std::runtime_error{"Invalid XML : closed : unexpected attribute " + value};
+            }
+        }
+        rx.skipEndElement();
+        while (rx.getElement(name)) {
+            if (name == "Point") {
+                bool sawX = false, sawY = false;
+                int x{0}, y{0};
+				string attr;
+                while (rx.getAttribute(attr, value)) {
+                    if (attr == "x") { sawX = true; x = atoi(value.c_str()); }
+                    else if (attr == "y") { sawY = true; y = atoi(value.c_str()); }
+                    if (sawX && sawY) vg.addPoint(Point(x, y));
                 }
             }
-            else if (line.find("<Point") != std::string::npos)
-            {
-                vg.addPoint(makePoint(line));
-            }
-        }
-  
+            else if (name == "/VectorGraphic") break;
+			rx.skipEndElement();
+		}
         return vg;
     }
-    
-    bool  VectorGraphicStreamer::vectorIsOpen(std::string line)
-    {
-        //<VectorGraphic closed="true">
-        return line.find("closed=\"true\"") == std::string::npos;
-    }
-    
-    Point VectorGraphicStreamer::makePoint(std::string line)
-    {
-         // <Point x="0" y="0"/>
-        // <Point x="10" y="0">
-  
-        Parse::trim(line, std::string("<Point />"));
-        Parse::trim(line, std::string("x=\""));
-        
-        std::stringstream num;
-        
-        for(int i = 0; i < line.size(); i++)
-        {
-            if (isdigit(line.at(i)))
-            {
-                num << line.at(i);
-                continue;
-            }
-            Parse::trimStart(line, num.str() + "\" ");
-            break;
-        }
-        
-        Parse::trimStart(line, "y=\"");
-        
-        int x = 0;
-        int y = 0;
-        num >> x;
-        y = atoi(line.c_str());
-        Point p{x, y};
-        
-         return p;
-    }
-    
-    std::string VectorGraphicStreamer::getXml(const Point point)
-    {
-        std::stringstream stream;
-        stream << "<Point x=\"" <<  point.getX()  << "\" y=\"" << point.getY() << "\" />" << std::endl;
-        return stream.str();
-    }
-} 
+} // namespace VG

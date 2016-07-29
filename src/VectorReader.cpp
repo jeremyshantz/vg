@@ -4,8 +4,9 @@
 #include <iostream>
 #include <fstream>
 #include <istream>
+#include <stdexcept>
 
-using Xml::VectorGraphicStreamer;
+using VG::VectorGraphicStreamer;
 
 namespace Xml {
 
@@ -31,23 +32,27 @@ namespace Xml {
             return VectorGraphicStreamer::fromXml(stream);
         }
         
-        void VectorReader::save(const VectorGraphic vg, std::string destination)
+        void VectorReader::save(const VectorGraphic & vg, std::string destination)
         {
             std::stringstream stream;
             VectorGraphicStreamer::toXml(vg, stream);
             save(destination, stream);
         }
 
-        void  VectorReader::open(std::string & source, std::stringstream & stream)
+        void  VectorReader::open(std::string & source, std::ostream & stream)
         {
             std::ifstream file(source);
 
+            
             if (!file)
             {
-                throw std::exception();
+                throw std::runtime_error("Bad file");
             }
-
+            
+           
             stream << file.rdbuf();
+           
+            
             file.close();
         }
 

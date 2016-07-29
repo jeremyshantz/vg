@@ -4,13 +4,36 @@
 #include "src/VectorGraphicStreamer.h"
 #include "src/Point.h"
 #include <string>
-
+#include<vector>
+#include <sstream>
+#include <iostream>
+#include <string>
+#include <ostream>
 using Xml::VectorReader;
 using VG::VectorGraphic;
-using Xml::VectorGraphicStreamer;
+using VG::VectorGraphicStreamer;
 using VG::Point;
-const std::string source("./VectorGraphic.xml");
-const std::string destination("./output.xml");
+ std::string source("./VectorGraphic.xml");
+ std::string destination("./output.xml");
+
+//TEST(istream, get)
+//{
+//    std::stringstream s{};
+//    VectorReader reader;
+//    reader.open(source, s);
+// 
+//    char c = s.get();
+//    std::string str{c};
+//    
+//    c = s.get();
+//    std::string s2{c};
+//    
+//    std::cout << s2 << std::endl;
+//    
+//     
+//}
+
+
 
 TEST(read_and_write, Driver)
 {

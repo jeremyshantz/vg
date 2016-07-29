@@ -1,19 +1,17 @@
 #pragma once
-
 #include "VectorGraphic.h"
 
-using VG::VectorGraphic;
+namespace VG { 
 
-namespace VG {
+class HVectorGraphic {
+public:
+    HVectorGraphic();
+    HVectorGraphic(VectorGraphic *);
+    HVectorGraphic(const HVectorGraphic& orig);
+    virtual ~HVectorGraphic();
+    VectorGraphic & get();
+private:
 
-    class HVectorGraphic {
-    public:
-        HVectorGraphic();
-        HVectorGraphic(VectorGraphic * vg);
-        HVectorGraphic(const HVectorGraphic& orig);
-        virtual ~HVectorGraphic();
-        const VectorGraphic  * get();
-    private:
-        VectorGraphic * graphic;
-    };
+};
+
 }

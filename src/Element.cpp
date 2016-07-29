@@ -17,13 +17,13 @@ namespace Xml {
     {
 
     }
+    const std::string Element::getName() const
+    {
+        
+    }
     const std::string Element::getAttribute(const std::string name) const
     {
         
     }
-    
-     ElementList Element::getChildElements()
-     {
-         
-     }
+    \
 }

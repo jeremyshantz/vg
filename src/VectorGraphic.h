@@ -4,6 +4,8 @@
 #include <vector>
 #include <set>
 #include <iostream>
+#include <memory>
+#include <string>
 
 namespace VG 
 {
@@ -50,15 +52,8 @@ namespace VG
                  return false;
              }
              
-             for(int i = 0; i < points.size(); i++)
-             {
-                 if (getPoint(i) != vg.getPoint(i))
-                 {
-                     return false;
-                 }
-             }
-             
-             return true;
+             return points == vg.points;
         }
     };
+     
 }

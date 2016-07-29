@@ -1,25 +1,20 @@
+/*
+Copyright (C) 2016. Sundeep Bhatia. All Rights Reserved.
+
+Project - Assignment1
+File - VectorGraphicStreamer.h
+Created - 7/17/2016 - Sundeep Bhatia
+*/
 #pragma once
-
-#include "VectorGraphic.h"
-#include "Parse.h"
-#include "Point.h"
-#include <sstream>
-
-using VG::Point;
-using  VG::VectorGraphic;
-
-namespace Xml {
-    
+// C++ Std Lib
+#include <iosfwd>                       // std::istream, std::ostream
+// Project
+#include "VectorGraphic.h"              // VG:VectorGraphic
+#include  <stdexcept>
+namespace VG {
     class VectorGraphicStreamer {
     public:
-        virtual ~VectorGraphicStreamer();
-        static VectorGraphic fromXml(std::stringstream & xml);
-        static void toXml(const VectorGraphic & vg, std::stringstream& stream);
-    private:
-        VectorGraphicStreamer();
-         static VectorGraphic  makeVectorGraphic(std::stringstream & xml);
-         static bool  vectorIsOpen(std::string line);
-         static Point  makePoint(const std::string line);
-         static std::string getXml(const Point point);
+        static void toXml(const VectorGraphic& vg, std::ostream& out);
+        static VectorGraphic fromXml(std::istream& in);
     };
-}
+} // namespace VG

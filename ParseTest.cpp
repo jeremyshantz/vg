@@ -1,20 +1,13 @@
 #include "src/Parse.h"
 #include "cppunitlite/TestHarness.h"
 
-using namespace Xml::Parse;
+using namespace Parse;
+
 
 TEST(leadingSpace, Parse)
 {
     std::string actual{"      \tHello"};
     trim(actual);
-    
-    CHECK_EQUAL("Hello", actual);
-}
-
-TEST(trailingSpace, Parse)
-{
-    std::string actual{"Hello      \t"};
-    trimTrailing(actual, std::string(" \t\n"));
     
     CHECK_EQUAL("Hello", actual);
 }

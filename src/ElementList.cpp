@@ -21,7 +21,7 @@ namespace Xml {
     {
 
     }
-    std::unique_ptr<HElement> ElementList::operator[](int)
+    HElement ElementList::operator[](int)
     {
 
     }

@@ -1,11 +1,9 @@
 
 #include "HVectorGraphic.h"
-
 namespace VG {
-
-    HVectorGraphic::HVectorGraphic() {
-    }
-    HVectorGraphic::HVectorGraphic(VectorGraphic * vg): graphic(vg) {
+    
+    HVectorGraphic::HVectorGraphic(){}
+    HVectorGraphic::HVectorGraphic(VectorGraphic *) {
     }
 
     HVectorGraphic::HVectorGraphic(const HVectorGraphic& orig) {
@@ -14,8 +12,8 @@ namespace VG {
     HVectorGraphic::~HVectorGraphic() {
     }
     
-    const VectorGraphic  * HVectorGraphic::get()
+    VectorGraphic & HVectorGraphic::get()
     {
-
+        
     }
 }

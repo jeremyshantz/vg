@@ -15,6 +15,9 @@ namespace Framework {
         Layer(const Layer& orig);
         virtual ~Layer();
         string getAlias() const;
+        bool operator==(const Layer &);
+        vector<PlacedGraphic>::iterator begin();
+        vector<PlacedGraphic>::iterator end();
     private:
         string alias;
         vector<PlacedGraphic> graphics;

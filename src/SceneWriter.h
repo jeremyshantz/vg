@@ -1,8 +1,7 @@
 #pragma once
 
 #include "Scene.h"
-#include "Element.h"
-#include <memory>
+#include "HElement.h"
 
 namespace Framework{
 
@@ -11,7 +10,7 @@ namespace Framework{
         SceneWriter();
         SceneWriter(const SceneWriter& orig);
         virtual ~SceneWriter();
-        static std::unique_ptr<Xml::HElement>writeScene(Scene & scene);
+        static Xml::HElement writeScene(Scene & scene);
     private:
 
     };

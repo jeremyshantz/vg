@@ -1,13 +1,9 @@
 #pragma once
+#include "PlacedGraphic.h"
+#include <vector>
 
 namespace Framework {
+ 
+    using PlacedGraphicIterator = std::vector<PlacedGraphic>::iterator;
     
-class PlacedGraphicIterator {
-    public:
-        PlacedGraphicIterator();
-        PlacedGraphicIterator(const PlacedGraphicIterator& orig);
-        virtual ~PlacedGraphicIterator();
-    private:
-
-    };
 }

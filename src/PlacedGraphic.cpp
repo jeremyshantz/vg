@@ -3,34 +3,37 @@
 
 namespace Framework {
 
-    PlacedGraphic::PlacedGraphic() {
+    PlacedGraphic::PlacedGraphic() : graphic()
+    {
     }
     
-    PlacedGraphic::PlacedGraphic(VG::Point, VG::HVectorGraphic&)
+    PlacedGraphic::PlacedGraphic(VG::Point point, VG::HVectorGraphic& graphic)
+    : placementPoint(point),  graphic(std::make_shared<VG::HVectorGraphic>(graphic))
     {
+    }
 
+    PlacedGraphic::PlacedGraphic(const PlacedGraphic& pg)
+    : graphic(pg.graphic)
+    {  
     }
     
-    PlacedGraphic::PlacedGraphic(const PlacedGraphic & orig) {
-    }
+    PlacedGraphic::~PlacedGraphic() { }
 
-    PlacedGraphic::~PlacedGraphic() {
-    }
-
-    void PlacedGraphic::setGraphic(const HVectorGraphic & hgraphic)
+    void PlacedGraphic::setGraphic(const HVectorGraphic &   hgraphic)
     {
-        graphic = hgraphic;
+        graphic =std::make_shared<VG::HVectorGraphic>(hgraphic);
     }
 
-    const VectorGraphic * PlacedGraphic::getGraphic()
+    const VectorGraphic & PlacedGraphic::getGraphic()
     {
-        
+        return graphic->get();
     }
 
     void PlacedGraphic::setPlacementPoint(const Point & point)
     {
         placementPoint = point;
     }
+   
     const Point & PlacedGraphic::getPlacementPoint() const
     {
         return placementPoint;

@@ -15,7 +15,6 @@
       <logicalFolder name="cppunitlite" displayName="cppunitlite" projectFiles="true">
         <itemPath>cppunitlite/Failure.cpp</itemPath>
         <itemPath>cppunitlite/Failure.h</itemPath>
-        <itemPath>cppunitlite/Main.cpp</itemPath>
         <itemPath>cppunitlite/Test.cpp</itemPath>
         <itemPath>cppunitlite/Test.h</itemPath>
         <itemPath>cppunitlite/TestHarness.h</itemPath>
@@ -30,7 +29,6 @@
           <itemPath>src/Layer.h</itemPath>
           <itemPath>src/PlacedGraphic.cpp</itemPath>
           <itemPath>src/PlacedGraphic.h</itemPath>
-          <itemPath>src/PlacedGraphicIterator.cpp</itemPath>
           <itemPath>src/PlacedGraphicIterator.h</itemPath>
           <itemPath>src/Scene.cpp</itemPath>
           <itemPath>src/Scene.h</itemPath>
@@ -54,7 +52,6 @@
           <itemPath>src/Element.h</itemPath>
           <itemPath>src/ElementList.cpp</itemPath>
           <itemPath>src/ElementList.h</itemPath>
-          <itemPath>src/HElement.cpp</itemPath>
           <itemPath>src/HElement.h</itemPath>
           <itemPath>src/Parse.cpp</itemPath>
           <itemPath>src/Parse.h</itemPath>
@@ -69,6 +66,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>DriverTests.cpp</itemPath>
+      <itemPath>cppunitlite/Main.cpp</itemPath>
       <itemPath>ParseTest.cpp</itemPath>
       <itemPath>PlacedGraphicTest.cpp</itemPath>
       <itemPath>PointTest.cpp</itemPath>
@@ -80,6 +78,7 @@
       <itemPath>XmlReaderTest.cpp</itemPath>
       <itemPath>XmlWriterTest.cpp</itemPath>
       <itemPath>output.xml</itemPath>
+      <itemPath>person.cpp</itemPath>
       <itemPath>scene.xml</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -155,6 +154,8 @@
       </item>
       <item path="output.xml" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="person.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="scene.xml" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/AttributeMap.cpp" ex="false" tool="1" flavor2="0">
@@ -168,8 +169,6 @@
       <item path="src/ElementList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ElementList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/HElement.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/HElement.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -188,8 +187,6 @@
       <item path="src/PlacedGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PlacedGraphic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/PlacedGraphicIterator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PlacedGraphicIterator.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -294,6 +291,8 @@
       </item>
       <item path="output.xml" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="person.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="scene.xml" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/AttributeMap.cpp" ex="false" tool="1" flavor2="0">
@@ -307,8 +306,6 @@
       <item path="src/ElementList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ElementList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/HElement.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/HElement.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -327,8 +324,6 @@
       <item path="src/PlacedGraphic.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PlacedGraphic.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/PlacedGraphicIterator.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/PlacedGraphicIterator.h" ex="false" tool="3" flavor2="0">
       </item>

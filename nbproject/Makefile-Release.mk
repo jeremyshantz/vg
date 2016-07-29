@@ -50,15 +50,14 @@ OBJECTFILES= \
 	${OBJECTDIR}/cppunitlite/Test.o \
 	${OBJECTDIR}/cppunitlite/TestRegistry.o \
 	${OBJECTDIR}/cppunitlite/TestResult.o \
+	${OBJECTDIR}/person.o \
 	${OBJECTDIR}/src/AttributeMap.o \
 	${OBJECTDIR}/src/Element.o \
 	${OBJECTDIR}/src/ElementList.o \
-	${OBJECTDIR}/src/HElement.o \
 	${OBJECTDIR}/src/HVectorGraphic.o \
 	${OBJECTDIR}/src/Layer.o \
 	${OBJECTDIR}/src/Parse.o \
 	${OBJECTDIR}/src/PlacedGraphic.o \
-	${OBJECTDIR}/src/PlacedGraphicIterator.o \
 	${OBJECTDIR}/src/Point.o \
 	${OBJECTDIR}/src/Scene.o \
 	${OBJECTDIR}/src/SceneReader.o \
@@ -169,6 +168,11 @@ ${OBJECTDIR}/cppunitlite/TestResult.o: cppunitlite/TestResult.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/cppunitlite/TestResult.o cppunitlite/TestResult.cpp
 
+${OBJECTDIR}/person.o: person.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/person.o person.cpp
+
 ${OBJECTDIR}/src/AttributeMap.o: src/AttributeMap.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -183,11 +187,6 @@ ${OBJECTDIR}/src/ElementList.o: src/ElementList.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ElementList.o src/ElementList.cpp
-
-${OBJECTDIR}/src/HElement.o: src/HElement.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/HElement.o src/HElement.cpp
 
 ${OBJECTDIR}/src/HVectorGraphic.o: src/HVectorGraphic.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -208,11 +207,6 @@ ${OBJECTDIR}/src/PlacedGraphic.o: src/PlacedGraphic.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PlacedGraphic.o src/PlacedGraphic.cpp
-
-${OBJECTDIR}/src/PlacedGraphicIterator.o: src/PlacedGraphicIterator.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/PlacedGraphicIterator.o src/PlacedGraphicIterator.cpp
 
 ${OBJECTDIR}/src/Point.o: src/Point.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

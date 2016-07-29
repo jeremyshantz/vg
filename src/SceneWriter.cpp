@@ -12,7 +12,7 @@ namespace Framework {
     SceneWriter::~SceneWriter() {
     }
     
-    std::unique_ptr<Xml::HElement> SceneWriter::writeScene(Scene & scene)
+    Xml::HElement SceneWriter::writeScene(Scene & scene)
     {
         
     }

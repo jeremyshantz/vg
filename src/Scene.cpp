@@ -1,4 +1,6 @@
 
+#include <algorithm>
+
 #include "Scene.h"
 
 namespace Framework {
@@ -26,4 +28,29 @@ namespace Framework {
     {
         return height;
     }
+    
+    void Scene::pushBack(Layer layer)
+    {
+        layers.push_back(layer);
+    }
+    
+    void Scene::remove(Layer layer)
+    {
+        auto position = std::find(layers.begin(), layers.end(), layer);
+        
+        if (position != layers.end()) {
+            layers.erase(position);
+        }
+    }
+    
+    std::vector<Layer>::iterator Scene::begin()
+    {
+        return layers.begin();
+    }
+    
+    std::vector<Layer>::iterator Scene::end()
+    {
+        return layers.end();
+    }
+    
 }

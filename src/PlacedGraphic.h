@@ -4,6 +4,7 @@
 #include "HVectorGraphic.h"
 #include "Point.h"
 #include <vector>
+#include <memory>
 
 using VG::VectorGraphic;
 using VG::HVectorGraphic;
@@ -16,14 +17,12 @@ namespace Framework {
         PlacedGraphic(VG::Point, VG::HVectorGraphic&);
         PlacedGraphic(const PlacedGraphic&);
         void setGraphic(const HVectorGraphic &);
-        const VectorGraphic * getGraphic();
+        const VectorGraphic & getGraphic();
         void setPlacementPoint(const Point &);
         const Point & getPlacementPoint() const;
         virtual ~PlacedGraphic();
     private:
-        int x;
-        int y;
         Point placementPoint;
-        HVectorGraphic graphic;
+        std::shared_ptr<HVectorGraphic> graphic;
     };
 }
