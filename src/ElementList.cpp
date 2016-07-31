@@ -3,26 +3,32 @@
 
 namespace Xml {
 
-    ElementList::ElementList() {
-    }
-
-    ElementList::ElementList(const ElementList& orig) {
-    }
-
+    ElementList::ElementList() {}
+ 
+    ElementList::ElementList(const ElementList& orig)
+    : elements(orig.elements)
+    {}
+    
     ElementList::~ElementList() {
     }
     
-    int ElementList::size()
+    void ElementList::add(const HElement & e)
     {
-        
+        elements.push_back(e);
+    }
+    
+    const int ElementList::size() const
+    {
+        return elements.size();
     }
 
-    bool ElementList::empty()
+    const bool ElementList::empty() const
     {
-
+        return elements.empty();
     }
-    HElement ElementList::operator[](int)
+    
+    HElement ElementList::operator[](int i)
     {
-
+        return elements[i];
     }
 }

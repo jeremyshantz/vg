@@ -8,17 +8,14 @@ namespace Framework {
     Scene::Scene(int width, int height): width(width), height(height) {
     }
 
-    Scene::Scene(const Scene& orig) {
+    Scene::Scene(const Scene& orig)
+    : width(orig.width), height(orig.height)
+    {
     }
 
     Scene::~Scene() {
     }
-    
-    void Scene::add(const PlacedGraphic & graphic)
-    {
-        graphics.push_back(graphic);
-    }
-
+ 
     int Scene::getWidth() const
     {
         return width;

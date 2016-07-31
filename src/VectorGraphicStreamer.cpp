@@ -8,68 +8,15 @@ Created - 7/17/2016 - Sundeep Bhatia
 // Project
 #include "Parse.h"                      // Parse::eat, Parse::trim
 #include "VectorGraphicStreamer.h"      // VG::VectorGraphic
+#include "ReadXml.h"
 // C++ Std Library
 #include <iostream>                     // std::istream, std::ostream, std::ios::exceptions, ios::ios_base:*bit
 #include <string>
-
 #include<sstream>
 
+using Xml::ReadXml;
 using std::runtime_error;
 using std::string;
-
-namespace {
-    class ReadXml {
-    public:
-        ReadXml(std::istream& xml) : in(xml) {}
-        void getName(string& name, char delim)
-        {
-            Parse::eat(in);
-            name.clear();
-            while (in.get(ch) && !isspace(ch)) {
-                if (ch == delim) { in.unget(); break; }
-                name.push_back(ch);
-            }
-            Parse::trim(name);
-        }
-        bool getValue(string& value)
-        {
-            Parse::eat(in);
-            value.clear();
-            if (in.get(ch) && ch != '"') return false;
-            while (in.get(ch) && ch != '"') {
-                value.push_back(ch);
-            }
-            return true;
-        }
-        bool getElement(string& name) {
-            
-            Parse::eat(in);
-            name.clear();
-            in.get(ch);
-            if (ch != '<') return false;
-            getName(name, '>');
-//            Parse::trim(name, std::string("<"));
-//            std::cout << name << std::endl;
-//            
-            return true;
-        }
-        void skipEndElement() {
-            Parse::eat(in);
-            Parse::eat(in, "/>");
-        }
-        bool getAttribute(string& name, string& value) {
-            Parse::eat(in);
-            ch = in.peek();
-            if (ch == '/' || ch == '>') return false;
-            getName(name, '=');
-            Parse::eat(in, "=");
-            return getValue(value);
-        }
-    private:
-        char ch;
-        std::istream& in;
-    };
-}
 
 namespace VG {
     void VectorGraphicStreamer::toXml(const VectorGraphic& vg, std::ostream& out)

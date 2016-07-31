@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <ostream>
 
 namespace VG 
 {
@@ -28,6 +29,8 @@ namespace VG
             void openShape();
             int getWidth()  const;
             int getHeight()  const;
+            //inline std::ostream& operator<<(std::ostream & o){ return o; } // does not compile
+            
        private:
             bool open;
             Points points;
@@ -54,6 +57,18 @@ namespace VG
              
              return points == vg.points;
         }
+    
     };
-     
+ 
+    inline std::ostream& operator<<(std::ostream & o, const VectorGraphic & g)
+      {
+            o << std::boolalpha  << g.isOpen();
+            for(int i = 0; i < g.getPointCount(); ++i) {
+                o << g.getPoint(i);
+            }
+            // no privledged acceess to members from free function
+           // std::for_each(g.begin(), g.end(), [&o](const Point & p)  { o << p;});    
+            return o;
+      }
+    
 }

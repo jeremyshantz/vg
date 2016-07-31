@@ -1,7 +1,7 @@
 #pragma once
 #include "HElement.h"
 #include <memory>
-
+#include <vector>
 namespace Xml {
 
     class ElementList {
@@ -9,10 +9,11 @@ namespace Xml {
         ElementList();
         ElementList(const ElementList& orig);
         virtual ~ElementList();
-        int size();
-        bool empty();
+        const int size() const;
+        const bool empty() const ;
+        void add(const HElement &);
         HElement operator[](int);
     private:
-
+        std::vector<HElement> elements;
     };
 }

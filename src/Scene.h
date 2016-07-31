@@ -23,12 +23,11 @@ namespace Framework {
         void pushBack(Layer layer);
         void remove(Layer layer);
         virtual ~Scene();
-        std::vector<Layer>::iterator  begin();
+        std::vector<Layer>::iterator begin();
         std::vector<Layer>::iterator end();
     private:
         int width;
         int height;
         vector<Layer> layers;
-        vector<PlacedGraphic> graphics;
     };
 }

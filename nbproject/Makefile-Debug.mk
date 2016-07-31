@@ -36,6 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/DriverTests.o \
+	${OBJECTDIR}/ElementListTests.o \
+	${OBJECTDIR}/ElementTests.o \
 	${OBJECTDIR}/ParseTest.o \
 	${OBJECTDIR}/PlacedGraphicTest.o \
 	${OBJECTDIR}/PointTest.o \
@@ -51,7 +53,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/cppunitlite/TestRegistry.o \
 	${OBJECTDIR}/cppunitlite/TestResult.o \
 	${OBJECTDIR}/person.o \
-	${OBJECTDIR}/src/AttributeMap.o \
 	${OBJECTDIR}/src/Element.o \
 	${OBJECTDIR}/src/ElementList.o \
 	${OBJECTDIR}/src/HVectorGraphic.o \
@@ -97,6 +98,16 @@ ${OBJECTDIR}/DriverTests.o: DriverTests.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DriverTests.o DriverTests.cpp
+
+${OBJECTDIR}/ElementListTests.o: ElementListTests.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ElementListTests.o ElementListTests.cpp
+
+${OBJECTDIR}/ElementTests.o: ElementTests.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ElementTests.o ElementTests.cpp
 
 ${OBJECTDIR}/ParseTest.o: ParseTest.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -172,11 +183,6 @@ ${OBJECTDIR}/person.o: person.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/person.o person.cpp
-
-${OBJECTDIR}/src/AttributeMap.o: src/AttributeMap.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/AttributeMap.o src/AttributeMap.cpp
 
 ${OBJECTDIR}/src/Element.o: src/Element.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

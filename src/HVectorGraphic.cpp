@@ -1,19 +1,24 @@
 
 #include "HVectorGraphic.h"
+
 namespace VG {
     
     HVectorGraphic::HVectorGraphic(){}
-    HVectorGraphic::HVectorGraphic(VectorGraphic *) {
+    HVectorGraphic::HVectorGraphic(VectorGraphic * v)
+    : graphic(v)
+    {
     }
 
-    HVectorGraphic::HVectorGraphic(const HVectorGraphic& orig) {
+    HVectorGraphic::HVectorGraphic(const HVectorGraphic& orig)
+    : graphic(orig.graphic)
+    {
     }
 
     HVectorGraphic::~HVectorGraphic() {
     }
     
-    VectorGraphic & HVectorGraphic::get()
+    const VectorGraphic & HVectorGraphic::get()
     {
-        
+          return *graphic.get();
     }
 }

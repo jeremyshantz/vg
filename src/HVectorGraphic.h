@@ -1,5 +1,6 @@
 #pragma once
 #include "VectorGraphic.h"
+#include <memory>
 
 namespace VG { 
 
@@ -9,9 +10,9 @@ public:
     HVectorGraphic(VectorGraphic *);
     HVectorGraphic(const HVectorGraphic& orig);
     virtual ~HVectorGraphic();
-    VectorGraphic & get();
+    const VectorGraphic & get();
 private:
-
+    std::shared_ptr<VectorGraphic> graphic;
 };
 
 }

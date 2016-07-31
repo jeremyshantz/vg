@@ -10,7 +10,7 @@ namespace VG
          int min = *set.begin();
          int max = *++set.end();
         
-        //  std::for_each(set.begin(), set.end(), [](const int &n){ std::cout << n << ",";  });
+         // std::for_each(set.begin(), set.end(), [](const int &n){ std::cout << n << ",";  });
     
          return max - min;
     }
@@ -109,5 +109,5 @@ namespace VG
     int VectorGraphic::getHeight()  const
     {
          return (getDifference(y));
-    }    
+    }
 }

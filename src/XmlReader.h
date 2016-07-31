@@ -1,18 +1,37 @@
 #pragma once
 
+#include "ReadXml.h"
 #include "HElement.h"
-#include <sstream>
+#include <istream>
+#include <iostream>
 #include <memory>
 
 namespace Xml {
 
     class Reader {
     public:
-        static HElement loadXml(std::stringstream & x);
-    private:
-//
-//        Reader();
-//        Reader(const Reader& orig);
-//        virtual ~Reader();
+        Reader(std::istream & in) : reader(in) {}
+        static HElement loadXml(std::istream &);
+        
+    private:        
+        HElement load();
+        void addAttributesAndChildren(HElement & e);
+        ReadXml reader;
+        int indent = 1;
+        bool debug = false;
+
+        inline void log(std::string val) {
+            if (!debug) return;
+            std::string sp(indent, ' ');
+            std::cout << sp << val << std::endl;
+        }
+
+        inline void dec() {
+            indent -= 2;
+        }
+
+        inline void incr() {
+            indent += 2;
+        }    
     };
 }
