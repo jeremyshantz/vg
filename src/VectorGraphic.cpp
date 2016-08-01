@@ -110,4 +110,13 @@ namespace VG
     {
          return (getDifference(y));
     }
+
+    Points::iterator VectorGraphic::begin()
+    {
+        return points.begin();
+    }
+    Points::iterator VectorGraphic::end()
+    {
+        return points.end();
+    }
 }

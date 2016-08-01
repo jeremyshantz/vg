@@ -7,9 +7,6 @@
 #include <iterator>
 
 using Framework::Layer;
-using Framework::PlacedGraphic;
-using std::vector;
-using std::string;
 
 namespace Framework {
 
@@ -17,7 +14,6 @@ namespace Framework {
     public:
         Scene(int width, int height);
         Scene(const Scene& orig);
-        void add(const PlacedGraphic & graphic);
         int getWidth() const;
         int getHeight() const;
         void pushBack(Layer layer);
@@ -25,9 +21,10 @@ namespace Framework {
         virtual ~Scene();
         std::vector<Layer>::iterator begin();
         std::vector<Layer>::iterator end();
+        int count();
     private:
+        vector<Layer> layers;
         int width;
         int height;
-        vector<Layer> layers;
     };
 }

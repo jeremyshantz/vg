@@ -32,3 +32,13 @@ TEST(setGraphic, PlacedGraphic)
 
     CHECK_EQUAL(vg.get(), pg.getGraphic());
 }
+
+TEST(copy_constructor_does_not_dump, PlacedGraphic) {
+
+    VG::HVectorGraphic vg(new VG::VectorGraphic);
+    Framework::PlacedGraphic pg(VG::Point(44, 55), vg);
+    
+    Framework::PlacedGraphic pg2  = pg;
+    
+    auto g = pg2.getGraphic();
+}

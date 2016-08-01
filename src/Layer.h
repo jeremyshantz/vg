@@ -9,15 +9,18 @@ using std::vector;
 
 namespace Framework {
 
+    using PlacedGraphicIterator = std::vector<PlacedGraphic>::iterator;
+    
     class Layer {
     public:
         Layer(string alias);
         Layer(const Layer& orig);
         virtual ~Layer();
         string getAlias() const;
+        void add(PlacedGraphic &);
         bool operator==(const Layer &);
-        vector<PlacedGraphic>::iterator begin();
-        vector<PlacedGraphic>::iterator end();
+        PlacedGraphicIterator begin();
+        PlacedGraphicIterator end();
     private:
         string alias;
         vector<PlacedGraphic> graphics;

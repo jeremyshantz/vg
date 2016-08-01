@@ -3,7 +3,6 @@
 
 using namespace Parse;
 
-
 TEST(leadingSpace, Parse)
 {
     std::string actual{"      \tHello"};

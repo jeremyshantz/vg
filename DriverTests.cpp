@@ -16,25 +16,6 @@ using VG::Point;
  std::string source("./VectorGraphic.xml");
  std::string destination("./output.xml");
 
-//TEST(istream, get)
-//{
-//    std::stringstream s{};
-//    VectorReader reader;
-//    reader.open(source, s);
-// 
-//    char c = s.get();
-//    std::string str{c};
-//    
-//    c = s.get();
-//    std::string s2{c};
-//    
-//    std::cout << s2 << std::endl;
-//    
-//     
-//}
-
-
-
 TEST(read_and_write, Driver)
 {
     VectorReader reader;

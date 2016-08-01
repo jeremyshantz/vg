@@ -8,6 +8,8 @@ File - VectorGraphicStreamer.cpp
 Created - 7/17/2016 - Sundeep Bhatia
 */
 #include "Parse.h"
+#include <sstream>
+
 namespace Xml {
 class ReadXml {
     public:
@@ -62,6 +64,18 @@ class ReadXml {
             
             in.unget();
             return false;
+        }
+        
+        void skipComment() {
+            
+            Parse::eat(in);
+            std::stringstream stream;
+            
+            while (stream.str().find("-->") == -1) {
+                in.get(ch);
+                stream << ch;
+            }
+            
         }
         
         void skipEndElement() {

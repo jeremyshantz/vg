@@ -1,9 +1,9 @@
 #include "src/XmlReader.h"
-#include "src/PlacedGraphicIterator.h"
 #include "src/Element.h"
 #include "src/Scene.h"
 #include "src/SceneReader.h"
 #include "cppunitlite/TestHarness.h"
+#include <ostream>
 #include <sstream>
 
 const std::string TestXml = R"(
@@ -40,14 +40,16 @@ const std::string TestXml = R"(
 
 TEST(ReadScene, SceneReader)
 {
+    
     std::stringstream xmlStream(TestXml);
-    auto root = Xml::Reader::loadXml(xmlStream);
+    Xml::HElement root = Xml::Reader::loadXml(xmlStream);
+    //root->print(std::cout);
 
     auto s = Framework::SceneReader::readScene(*root);
 
     CHECK_EQUAL(800, s.getWidth());
     CHECK_EQUAL(600, s.getHeight());
-
+ 
     int numberOfLayers = 0;
     for (auto pos = s.begin(); pos != s.end(); ++numberOfLayers, ++pos)
     {
@@ -63,7 +65,8 @@ TEST(ReadScene, SceneReader)
                 if (iGraphic == 0)
                 {
                     CHECK_EQUAL(VG::Point(0, 0), (*graphic).getPlacementPoint());
-                    auto vg = (*graphic).getGraphic();
+
+                    auto vg = graphic->getGraphic();
                     CHECK_EQUAL(true, vg.isClosed());
                     CHECK_EQUAL(3, vg.getPointCount());
                     CHECK_EQUAL(VG::Point(1, 2), vg.getPoint(0));

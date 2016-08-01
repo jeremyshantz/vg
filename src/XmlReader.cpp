@@ -41,6 +41,12 @@ namespace Xml {
                 continue;
             }
             
+            if (name[0] == '!') {
+                log("found comment continuing");
+                reader.skipComment();
+                continue;
+            }
+            
             HElement e = make_HElement(name);
             addAttributesAndChildren(e);
             log("Adding " + e->getName() + " to " + node->getName());

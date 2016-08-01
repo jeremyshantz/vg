@@ -9,7 +9,7 @@ namespace Framework {
     }
 
     Scene::Scene(const Scene& orig)
-    : width(orig.width), height(orig.height)
+    : width(orig.width), height(orig.height), layers(orig.layers)
     {
     }
 
@@ -50,4 +50,5 @@ namespace Framework {
         return layers.end();
     }
     
+    int Scene::count() { return layers.size();}
 }

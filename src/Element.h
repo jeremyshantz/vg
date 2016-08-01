@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <ostream>
 
 namespace Xml {
 
@@ -24,6 +25,11 @@ namespace Xml {
         ElementList & getChildElements();
         void addAttribute(const std::string, const std::string);
         const std::string getAttribute(const std::string);
+        const int getAttributeInt(const std::string);
+        const bool getAttributeBool(const std::string);
         AttributeMap & getAttributes();
+        std::vector<HElement>::iterator begin();
+        std::vector<HElement>::iterator end();
+        void print(std::ostream&);
     };
 }

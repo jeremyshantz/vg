@@ -13,7 +13,7 @@ namespace Framework {
     }
 
     PlacedGraphic::PlacedGraphic(const PlacedGraphic& pg)
-    : graphic(pg.graphic)
+    :placementPoint(pg.placementPoint), graphic(pg.graphic)
     {  
     }
     

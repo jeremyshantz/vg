@@ -13,6 +13,8 @@ namespace Xml {
         const bool empty() const ;
         void add(const HElement &);
         HElement operator[](int);
+        std::vector<HElement>::iterator begin();
+        std::vector<HElement>::iterator end();
     private:
         std::vector<HElement> elements;
     };

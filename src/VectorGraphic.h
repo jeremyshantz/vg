@@ -29,6 +29,8 @@ namespace VG
             void openShape();
             int getWidth()  const;
             int getHeight()  const;
+            Points::iterator begin();
+            Points::iterator end();
             //inline std::ostream& operator<<(std::ostream & o){ return o; } // does not compile
             
        private:

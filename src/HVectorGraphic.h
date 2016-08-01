@@ -7,7 +7,7 @@ namespace VG {
 class HVectorGraphic {
 public:
     HVectorGraphic();
-    HVectorGraphic(VectorGraphic *);
+    HVectorGraphic(VectorGraphic *); // TODO see if this overload can be replaced
     HVectorGraphic(const HVectorGraphic& orig);
     virtual ~HVectorGraphic();
     const VectorGraphic & get();

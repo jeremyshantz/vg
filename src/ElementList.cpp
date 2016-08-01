@@ -31,4 +31,14 @@ namespace Xml {
     {
         return elements[i];
     }
+
+    std::vector<HElement>::iterator ElementList::begin()
+    {
+        return elements.begin();
+    }
+    
+    std::vector<HElement>::iterator ElementList::end()
+    {
+        return elements.end();
+    }
 }
