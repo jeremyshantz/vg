@@ -6,7 +6,6 @@ File - Parse.cpp
 Created - 7/17/2016 - Sundeep Bhatia
 */
 // Project
-//#include "/home/jshantz/NetBeansProjects/aAssignment1_solution/Parse.h"
 #include "Parse.h"
 using std::next;
 namespace Parse {

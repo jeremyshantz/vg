@@ -10,7 +10,7 @@ namespace Xml {
 
     class Reader {
     public:
-        Reader(std::istream & in) : reader(in) {}
+        inline Reader(std::istream & in) : reader(in) {}
         static HElement loadXml(std::istream &);
         
     private:        

@@ -13,10 +13,6 @@ using Framework::Layer;
 
 namespace Framework {
     
-    SceneWriter::SceneWriter() {}
-    SceneWriter::SceneWriter(const SceneWriter& orig) {}
-    SceneWriter::~SceneWriter() {}
-    
     HElement writePoint(Point point) {
         HElement e = Xml::make_HElement("Point");
         e->addAttribute("x", std::to_string(point.getX()));
@@ -64,7 +60,6 @@ namespace Framework {
             root->getChildElements().add(writeLayer(layer));
         });
         
-       
         return root;
     }
 }

@@ -8,12 +8,6 @@ using Pair = std::pair<std::string, std::string>;
 
 namespace Xml {
 
-    Writer::Writer() {}
-
-    Writer::Writer(const Writer& orig) {}
-
-    Writer::~Writer() {}
-    
     void Writer::writeXml(Xml::HElement e, std::ostream & out)
     {
         out << R"(<)" << e->getName();

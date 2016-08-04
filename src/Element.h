@@ -12,8 +12,9 @@ namespace Xml {
     
     class Element {
     
-        std::shared_ptr<ElementList> children;
         using HElement = std::shared_ptr<Xml::Element>;
+        
+        std::shared_ptr<ElementList> children;
         AttributeMap map;
         std::string name;
         
@@ -30,6 +31,5 @@ namespace Xml {
         AttributeMap & getAttributes();
         std::vector<HElement>::iterator begin();
         std::vector<HElement>::iterator end();
-        void print(std::ostream&);
-    };
+    };    
 }

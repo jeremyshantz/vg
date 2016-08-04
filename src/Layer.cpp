@@ -3,17 +3,13 @@
 
 namespace Framework {
 
-    Layer::Layer(string alias): alias(alias) {
-    }
+    Layer::Layer(string alias): alias(alias) {}
 
     Layer::Layer(const Layer& orig)
-    :alias(orig.alias), graphics(orig.graphics)
-    {
-    }
+    :alias(orig.alias), graphics(orig.graphics) {}
 
-    Layer::~Layer() {
-    }
-
+    Layer::~Layer() {}
+    
     string Layer::getAlias() const
     {
         return alias;

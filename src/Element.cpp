@@ -1,9 +1,8 @@
 #include "ElementList.h"
 #include "Element.h"
+#include "Layer.h"
 #include <iostream>
 #include <algorithm>
-
-#include "Layer.h"
 
 namespace Xml {
 
@@ -41,7 +40,7 @@ namespace Xml {
         return map.contains(attr) ? map[attr] : std::string();
     }
     
-    // re-implement as template function
+    // TODO re-implement as template function
     const int Element::getAttributeInt(const std::string attr)
     {
         std::string val = map.contains(attr) ? map[attr] : std::string();
@@ -61,18 +60,6 @@ namespace Xml {
         map.add(attr, val);
     }
     
-    void Element::print(std::ostream& o)
-    {
-        o << getName() << std::endl;
-       map.print(o);
-        
-        auto el = getChildElements();
-        
-        for(int i = 0; i < el.size(); ++i) {
-            el[i]->print(o);
-        }
-    }
-    
     std::vector<HElement>::iterator Element::begin()
     {
         return children->begin();
@@ -82,4 +69,16 @@ namespace Xml {
     {
         return children->end();
     }
+
+    inline std::ostream & operator<<(std::ostream& o,   Element & e)
+   {
+       o << e.getName() << std::endl;
+       o << e.getAttributes();
+
+       auto el = e.getChildElements();
+
+       for(int i = 0; i < el.size(); ++i) {
+           o << el[i];
+       }
+   }
 }

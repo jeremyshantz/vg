@@ -15,14 +15,4 @@ namespace Xml {
         std::map<std::string, std::string>::iterator AttributeMap::begin(){ return map.begin();}
         std::map<std::string, std::string>::iterator AttributeMap::end(){ return map.end(); }
         const std::string AttributeMap::operator[](const std::string attr){ return map[attr];}
-        
-        void AttributeMap::print(std::ostream & o)
-        {
-            o << "[";
-            std::for_each(map.begin(), map.end(), [&o](const std::pair<std::string, std::string> pair)
-            {
-                o << pair.first << "=" << pair.second << "; ";
-            });
-            o << "]" << std::endl;
-        }
 }

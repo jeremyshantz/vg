@@ -49,7 +49,7 @@ class ReadXml {
             return in.peek();
         }
         
-        bool atAndOfSelfClosingTag() {
+        bool atEndOfSelfClosingTag() {
             
             Parse::eat(in);
             in.get(ch);

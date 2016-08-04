@@ -20,8 +20,17 @@ namespace Xml {
         std::map<std::string, std::string>::iterator begin();
         std::map<std::string, std::string>::iterator end();
         const std::string operator[](const std::string);
-        void print(std::ostream & o);
     private:
         std::map<std::string, std::string> map;
     };
+
+    inline std::ostream & operator<<(std::ostream & o, AttributeMap & map)
+    {
+        o << "[";
+        std::for_each(map.begin(), map.end(), [&o](const std::pair<std::string, std::string> pair)
+        {
+            o << pair.first << "=" << pair.second << "; ";
+        });
+        o << "]" << std::endl;
+    }
 }

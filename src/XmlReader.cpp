@@ -23,7 +23,7 @@ namespace Xml {
              node->addAttribute(attr, value);
         }
         
-        if (reader.atAndOfSelfClosingTag())
+        if (reader.atEndOfSelfClosingTag())
         {
             log("self-closing");
             reader.skipEndElement();
